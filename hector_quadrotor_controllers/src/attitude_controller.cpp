@@ -159,9 +159,11 @@ public:
       if (!command_estop_) {
         estop_thrust_command_ = thrust_command_;
       }
+      /*
       ROS_WARN_STREAM_THROTTLE_NAMED(1.0, "attitude_controller", "No command received for "
                                     << (time - std::min(std::min(attitude_command_.header.stamp, yawrate_command_.header.stamp), thrust_command_.header.stamp)).toSec() <<
           "s, triggering estop");
+      */
       command_estop_ = true;
     } else if (command_estop_) {
       command_estop_ = false;
